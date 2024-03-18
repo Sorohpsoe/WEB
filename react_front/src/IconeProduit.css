@@ -1,0 +1,34 @@
+/* styles.css */
+
+.gray-box {
+  width: 210px;
+  height: 200px;
+  background-color: #ccc; /* Couleur de fond gris */
+}
+
+.PhotoViande {
+  width: 200px;
+  height: auto;
+  
+  position: absolute;
+  top: 5px; 
+  left: 5px;
+}
+
+.text-on-box {
+  position: absolute;
+  bottom: 30px; 
+  left: 20%; 
+}
+
+.compteur {
+  position: absolute;
+  bottom: 30px; /* Ajustez cette valeur selon vos besoins */
+  right: 5px; /* Décalage */
+}
+
+.AddBasket {
+  position: absolute;
+  bottom: 5px; /* Ajustez cette valeur selon vos besoins */
+  right: 5px; /* Décalage */
+}
