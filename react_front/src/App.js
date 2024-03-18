@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import IconeProduit from './IconeProduit.js';
+import image from './steak.jpg';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+// Afficher l'image importée
+function App(){
+  // Liste des prix
+  const prix = [
+    { id: 0, titre: "Produit A", prix: 10 },
+    { id: 1, titre: "Produit B", prix: 20 },
+    { id: 2, titre: "Produit C", prix: 30 },
+    { id: 3, titre: "Produit D", prix: 40 },
+  ];
+
+  return(
+    <div>
+      {prix.map((liste) => (
+        <IconeProduit image={image} liste={liste}/>
+      ))}
+      
+
     </div>
-  );
+  )
 }
 
 export default App;
