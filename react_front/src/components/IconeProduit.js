@@ -1,4 +1,4 @@
-import './IconeProduit.css';
+import '../styles/IconeProduit.css';
 import { useState } from "react";
 
 export default function IconeProduit (props) {
