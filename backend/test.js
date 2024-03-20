@@ -46,3 +46,4 @@ Viande.updateOne({ type: 'Boeuf' }, { $inc: { quantite: 1 } })
       console.log('Documents trouvés :', documents);
     })
     .catch((err) => console.log('Erreur lors de la recherche des documents :', err));
+    //fin de la connexion
