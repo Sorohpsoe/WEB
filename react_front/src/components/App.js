@@ -1,6 +1,6 @@
-import './App.css';
 import IconeProduit from './IconeProduit.js';
-import image from './steak.jpg';
+import image from '../assets/steak.jpg';
+import Banner from './Banner'
 
 // Afficher l'image importée
 function App(){
@@ -17,8 +17,7 @@ function App(){
       {prix.map((liste) => (
         <IconeProduit image={image} liste={liste}/>
       ))}
-      
-
+      <Banner /> 
     </div>
   )
 }
