@@ -31,6 +31,7 @@ export default function IconeProduit (props) {
 
   const handleBasket = () => {
     alert("Article ajouté au panier ! ")
+    
     setCompteur(0);
 
   };
@@ -54,4 +55,11 @@ export default function IconeProduit (props) {
     </div>
   )
 }
+
+export const test = [
+  { id: 0, titre: "test1", prix: 10 },
+  { id: 1, titre: "test2", prix: 20 },
+  { id: 2, titre: "test3", prix: 30 },
+  { id: 3, titre: "test4", prix: 40 },
+];
 
