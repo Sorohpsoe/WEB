@@ -1,6 +1,7 @@
 import IconeProduit from './IconeProduit.js';
 import image from '../assets/steak.jpg';
 import Banner from './Banner'
+import Catalogue from './Catalogue.js'
 
 // Afficher l'image importée
 function App(){
@@ -18,6 +19,7 @@ function App(){
         <IconeProduit image={image} liste={liste}/>
       ))}
       <Banner /> 
+      <Catalogue />
     </div>
   )
 }
