@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { PanierProvider } from "./PanierContext";
 import Home from "./pages/Home.js";
 import Achat from "./pages/Achat.js";
 import Panier from "./pages/Panier.js";
@@ -10,11 +11,16 @@ function App(){
   return(
     <div>
       <Router>
+        <PanierProvider>
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/achat" element={<Achat />} />
           <Route path="/panier" element={<Panier />} />
+          
         </Routes>
+
+        </PanierProvider>
       </Router>
 
       

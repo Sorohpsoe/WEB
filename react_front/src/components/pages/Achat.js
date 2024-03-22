@@ -18,6 +18,11 @@ function Achat() {
 
   return (
     <div>
+
+      <button 
+        onClick={() => {navigate("/panier");}} >Panier
+      </button>
+
       <button onClick={() => {navigate("/");}}>Accueil</button>
 
       {prix.map((liste) => (
