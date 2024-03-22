@@ -4,9 +4,11 @@ import IconeProduit from '../IconeProduit.js';
 import image from '../../assets/steak.jpg';
 import Banner from '../Banner'
 
+import '../../styles/Achat.css';
 
 function Achat() {
 
+  let index = 0
   const navigate = useNavigate();
   
   const prix = [
@@ -24,10 +26,12 @@ function Achat() {
       </button>
 
       <button onClick={() => {navigate("/");}}>Accueil</button>
-
-      {prix.map((liste) => (
-        <IconeProduit image={image} liste={liste}/>
+      
+      {prix.map((liste,idx) => (
+        
+        <IconeProduit image={image} liste={liste} index={index+idx}/>
       ))}
+      
       <Banner /> 
       
     </div>

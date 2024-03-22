@@ -1,0 +1,20 @@
+/* Ajoutez ces styles à votre fichier CSS existant */
+
+.icone-produit-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Commencez à aligner les icônes à partir de la gauche */
+}
+
+@media screen and (max-width: 768px) {
+  .icone-produit-container {
+    justify-content: center; /* Centrer les icônes sur les écrans plus petits */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .icone-produit-container {
+    flex-direction: column; /* Affichez les icônes en une colonne sur les écrans encore plus petits */
+    align-items: center; /* Centrer les icônes verticalement */
+  }
+}

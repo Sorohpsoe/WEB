@@ -6,20 +6,17 @@ export default function IconeProduit (props) {
 
   
   const { panierclient, modifierPanier } = usePanier();
+  const { liste, image, index } = props;
   
   // state
-  const liste = props.liste;
   const prix = liste.prix;
-  const id = liste.id;
-  const image=props.image;
-  const [compteur, setCompteur] = useState(0);
-  const top=200;
-  const left=id*300+200;
 
-  const style={ 
-    position: 'absolute',
-    top: `${top}px`, // Convertit la variable top en chaîne avec l'unité px
-    left: `${left}px`, // Convertit la variable left en chaîne avec l'unité px
+  
+  const [compteur, setCompteur] = useState(0);
+  
+  const position = {
+    top: (Math.floor(index / 4) * 270)+200, // 270px est la hauteur d'une icône plus son espacement
+    left: ((index % 4) * 220)+300, // 220px est la largeur d'une icône plus son espacement
   };
 
   // events
@@ -61,12 +58,9 @@ export default function IconeProduit (props) {
 
   // render
   return(
-    <div className="gray-box" style={style}>
-
-      <div className="text-on-box"> {prix}€ </div>
-
+    <div className="gray-box" style={{...position, position: 'absolute'}}>
+      <div className="text-on-box">{prix}€</div>
       <img src={image} alt="Steak" className="PhotoViande"/>
-      
       <div className="compteur"> 
         <button onClick={handleRemove}>-</button>
         {" "}{compteur}{" "} 
@@ -76,6 +70,7 @@ export default function IconeProduit (props) {
         <button onClick={handleBasket}>Ajouter au panier</button>
       </div>
     </div>
-  )
+  );
+
 }
 
