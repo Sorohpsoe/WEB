@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import IconeProduit from '../IconeProduit.js';
 import { image1, image2, image3 } from '../Images.js'; 
 import Banner from '../Banner'
@@ -7,9 +6,6 @@ import Banner from '../Banner'
 import '../../styles/Achat.css';
 
 function Achat() {
-
-  let index = 0
-  const navigate = useNavigate();
   
   
   const prix = [
@@ -24,23 +20,14 @@ function Achat() {
 
   return (
     <div>
-
-      <button 
-        onClick={() => {navigate("/panier");}} >Panier
-      </button>
-
-      <button onClick={() => {navigate("/");}}>Accueil</button>
-      
+      <Banner />
       <div className="icon-container">
         {prix.map((liste,idx) => (
-          
-          <IconeProduit image={image3} liste={liste} index={index+idx}/>
-        ))}
+            
+            <IconeProduit image={image3} liste={liste} index={index+idx}/>
+          ))}
       </div>
-      
-      
-      <Banner /> 
-      
+    
     </div>
   );
 }
