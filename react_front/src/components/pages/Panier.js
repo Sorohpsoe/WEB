@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { usePanier } from "../PanierContext";
-
-//import { useState } from "react";
+import "../../styles/Panier.css"; // Import du fichier CSS
+import image from '../../assets/steak.jpg';
 
 function Panier() {
   
@@ -12,26 +12,28 @@ function Panier() {
   console.log(panierclient);
 
   return (
-    <div>
-      
-      <button onClick={() => {navigate("/");}}>Accueil </button>
+    <div className="panier-container">
+      <button className="button-accueil" onClick={() => {navigate("/");}}>Accueil </button>
 
-      <h2>Panier</h2>
-      {/* Utilisez la méthode map() pour parcourir chaque élément de la liste panier */}
+      <h2 className="panier-title">Panier</h2>
       
-      <ul>
+      <div className="panier-items">
         {panierclient.map((produit) => (
-          <li key={produit.id}>
-            {produit.titre} - Quantité : {produit.quantité} - Prix indicatif : {produit.prix}€
-          </li>
+          <div key={produit.id} className="panier-item">
+            <img src={image} alt="Steak" className="item-image"/>
+            <div className="item-details">
+              <h3 className="item-title">{produit.titre}</h3>
+              <p className="item-price">Prix indicatif : {produit.prix}€</p>
+              <p className="item-quantity">Quantité : {produit.quantité}</p>
+              {/* Ajout de l'image de steak */}
+              
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
 
     </div>
   );
 }
 
 export default Panier;
-
-
-

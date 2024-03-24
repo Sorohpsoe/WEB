@@ -16,6 +16,7 @@ function Achat() {
     { id: 1, titre: "Produit B", prix: 20 },
     { id: 2, titre: "Produit C", prix: 30 },
     { id: 3, titre: "Produit D", prix: 40 },
+    { id: 3, titre: "Produit E", prix: 50 },
   ];
 
   return (
@@ -27,10 +28,13 @@ function Achat() {
 
       <button onClick={() => {navigate("/");}}>Accueil</button>
       
-      {prix.map((liste,idx) => (
-        
-        <IconeProduit image={image} liste={liste} index={index+idx}/>
-      ))}
+      <div className="icon-container">
+        {prix.map((liste,idx) => (
+          
+          <IconeProduit image={image} liste={liste} index={index+idx}/>
+        ))}
+      </div>
+      
       
       <Banner /> 
       

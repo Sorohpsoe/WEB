@@ -1,20 +1,11 @@
-/* Ajoutez ces styles à votre fichier CSS existant */
+/* Achat.css */
 
-.icone-produit-container {
+/* Style de base pour le conteneur des icônes */
+.icon-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start; /* Commencez à aligner les icônes à partir de la gauche */
+  justify-content: center; /* Centre les icônes horizontalement */
+
 }
 
-@media screen and (max-width: 768px) {
-  .icone-produit-container {
-    justify-content: center; /* Centrer les icônes sur les écrans plus petits */
-  }
-}
 
-@media screen and (max-width: 480px) {
-  .icone-produit-container {
-    flex-direction: column; /* Affichez les icônes en une colonne sur les écrans encore plus petits */
-    align-items: center; /* Centrer les icônes verticalement */
-  }
-}

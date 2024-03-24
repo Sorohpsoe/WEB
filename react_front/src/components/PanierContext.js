@@ -12,6 +12,7 @@ export function PanierProvider({ children }) {
     { id: 1, titre: "Produit B", quantité: 0, prix : 20 },
     { id: 2, titre: "Produit C", quantité: 0, prix : 30},
     { id: 3, titre: "Produit D", quantité: 0, prix : 40 },
+    { id: 4, titre: "Produit E", quantité: 0, prix : 50 },
   ]);
 
   const modifierPanier = (nouveauPanier) => {
