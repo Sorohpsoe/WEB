@@ -1,0 +1,62 @@
+.panier-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.button-accueil {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.panier-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.panier-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.panier-item {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+}
+
+.item-image {
+  width: auto; /* Définir la largeur sur "auto" */
+  max-width: 100px; /* Définir la largeur maximale */
+  height: auto;
+  object-fit: cover;
+  margin-right: 20px; /* Ajouter un espacement à droite de l'image */
+  flex-shrink: 0; /* Empêcher la réduction de la taille de l'image */
+}
+
+.item-details {
+  flex-grow: 1;
+}
+
+.item-title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.item-price {
+  font-size: 14px;
+  color: #666;
+}
+
+.item-quantity {
+  font-size: 14px;
+  color: #666;
+}
