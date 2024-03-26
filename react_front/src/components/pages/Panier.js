@@ -11,7 +11,7 @@ function Panier() {
   const navigate = useNavigate();
   const templateID = "template_3ns12gc"
   const serviceID = "service_yt825eq"
-  const userID = "WhJD9B8oAATOEHYRGnope"
+  const userID = "WhJD9B8oAATOEHYRG"
 
   const { panierclient }  = usePanier();
   console.log(panierclient);
@@ -37,27 +37,29 @@ function Panier() {
   return (
     <div className="panier-container">
       <button className="button-accueil" onClick={() => {navigate("/");}}>Accueil </button>
-
+  
       <h2 className="panier-title">Panier</h2>
       
       <div className="panier-items">
         {panierclient.map((produit) => (
-          <div key={produit.id} className="panier-item">
-            <img src={image} alt="Steak" className="item-image"/>
-            <div className="item-details">
-              <h3 className="item-title">{produit.titre}</h3>
-              <p className="item-price">Prix indicatif : {produit.prix}€</p>
-              <p className="item-quantity">Quantité : {produit.quantité}</p>
-              {/* Ajout de l'image de steak */}
-              
+          produit.quantité > 0 && (
+            <div key={produit.id} className="panier-item">
+              <img src={image} alt="Steak" className="item-image"/>
+              <div className="item-details">
+                <h3 className="item-title">{produit.titre}   </h3>
+                <h4 className="item-price">Prix indicatif : {produit.prix*produit.quantité}€</h4>
+                <h5 className="item-quantity">Quantité : {produit.quantité}</h5>
+                
+              </div>
             </div>
-          </div>
+          )
         ))}
       </div>
       
       <button className="button-valider-panier" onClick={envoyerEmail}>Valider Panier</button>
     </div>
   );
+  
 }
 
 export default Panier;

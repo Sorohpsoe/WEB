@@ -10,6 +10,11 @@
   overflow: hidden;
 }
 
+.gray-box:hover {
+  transform: scale(1.02); /* Zoom 2% lorsque survolé */
+  transition: transform 0.4s ease; /* Animation fluide */
+}
+
 .text-on-box {
   position: absolute;
   top: 160px;
