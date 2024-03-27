@@ -4,6 +4,7 @@ import {ProductCategoryRow} from "./Catalogue/products/ProductCategoryRow.js"
 import {ProductRow} from "./Catalogue/products/ProductRow.js"
 import React, { useState } from 'react';
 
+
 const PRODUCTS = [
   { category: "Plancha",price:"3€",stocked:true, name:"Entrecôte" },
   { category: "Plancha",price:"5€",stocked:true, name:"Steak" },

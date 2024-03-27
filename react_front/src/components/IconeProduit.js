@@ -6,9 +6,9 @@ export default function IconeProduit (props) {
   
   // state
   const liste = props.liste;
-  const prix = liste.prix;
+  const prix = liste.price;
   const id = liste.id;
-  const titre = liste.titre;
+  const titre = liste.name;
   const image=props.image;
   const [compteur, setCompteur] = useState(0);
   const top=200;

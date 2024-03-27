@@ -9,12 +9,16 @@ function Achat() {
 
   const navigate = useNavigate();
   
+  
   const prix = [
-    { id: 0, titre: "Produit A", prix: 10 },
-    { id: 1, titre: "Produit B", prix: 20 },
-    { id: 2, titre: "Produit C", prix: 30 },
-    { id: 3, titre: "Produit D", prix: 40 },
-  ];
+    { category: "Plancha",price:"3€",stocked:true, name:"Entrecôte", id: 0},
+    { category: "Plancha",price:"5€",stocked:true, name:"Steak" ,id:1},
+    { category: "Barbecue",price:"1€",stocked:false, name:"Côte",id:2 },
+    { category: "Barbecue",price:"999€",stocked:true, name:"Groin mdrrrrrrrrrrrrrrrrrrr",id:3 },
+    { category: "Vache",price:"69€",stocked:false, name:"La mère à tanguy",id:4 },
+    { category: "Plancha",price:"10€",stocked:true, name:"sirène",id:5},
+  
+  ]
 
   return (
     <div>

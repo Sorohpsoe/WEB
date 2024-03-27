@@ -18,7 +18,9 @@ function App(){
     { id: 3, titre: "Produit D", prix: 40 },
   ];
   return(
+    
     <div>
+      
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -27,9 +29,6 @@ function App(){
           <Route path="/panier" element={<Panier />} />
         </Routes>
       </Router>
-
-      
-      
       <Catalogue />
     </div>
   )
