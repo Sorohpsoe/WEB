@@ -1,14 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { usePanier } from "../PanierContext";
 import emailjs from 'emailjs-com'; // Importez le module EmailJS
 import "../../styles/Panier.css"; // Import du fichier CSS
 import image from '../../assets/steak.jpg';
+import Banner from '../Banner'
 
 
 function Panier() {
   
-  const navigate = useNavigate();
   const templateID = "template_3ns12gc"
   const serviceID = "service_yt825eq"
   const userID = "WhJD9B8oAATOEHYRGnope"
@@ -35,26 +34,25 @@ function Panier() {
   };
 
   return (
-    <div className="panier-container">
-      <button className="button-accueil" onClick={() => {navigate("/");}}>Accueil </button>
-
+    <div>
+      <Banner />
+      <div className="panier-container"></div>
       <h2 className="panier-title">Panier</h2>
-      
-      <div className="panier-items">
-        {panierclient.map((produit) => (
-          <div key={produit.id} className="panier-item">
-            <img src={image} alt="Steak" className="item-image"/>
-            <div className="item-details">
-              <h3 className="item-title">{produit.titre}</h3>
-              <p className="item-price">Prix indicatif : {produit.prix}€</p>
-              <p className="item-quantity">Quantité : {produit.quantité}</p>
-              {/* Ajout de l'image de steak */}
-              
-            </div>
+
+      <div className="panier-items"></div>
+
+      {panierclient.map((produit) => (
+        <div key={produit.id} className="panier-item">
+          <img src={image} alt="Steak" className="item-image" />
+          <div className="item-details">
+            <h3 className="item-title">{produit.titre}</h3>
+            <p className="item-price">Prix indicatif : {produit.prix}€</p>
+            <p className="item-quantity">Quantité : {produit.quantité}</p>
+            {/* Ajout de l'image de steak */}
+
           </div>
-        ))}
-      </div>
-      
+        </div>
+      ))}
       <button className="button-valider-panier" onClick={envoyerEmail}>Valider Panier</button>
     </div>
   );
