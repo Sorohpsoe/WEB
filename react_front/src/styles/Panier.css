@@ -1,60 +1,62 @@
-/* Conteneur du panier */
 .panier-container {
   padding: 20px;
-  width: 90%; /* Ajustement de la largeur */
-  max-width: 1200px; /* Définition de la largeur maximale */
+  max-width: 800px;
   margin: 0 auto;
 }
 
-/* Éléments individuels du panier */
+.button-accueil {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.panier-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.panier-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
 .panier-item {
-  border: 2px solid #ccc;
-  border-radius: 10px; /* Augmentation de la bordure arrondie */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   padding: 20px;
-  margin-bottom: 20px; /* Espacement entre les éléments du panier */
-  display: grid; /* Utilisation de la grille pour organiser les éléments */
-  grid-template-columns: auto 1fr; /* Une colonne pour l'image et une colonne pour les détails */
-  grid-gap: 20px; /* Espacement entre les colonnes */
-}
-
-/* Image de l'article */
-.item-image {
-  width: 150px;
-  height: auto;
-  object-fit: contain;
-  border-radius: 5px; /* Bordure arrondie pour l'image */
-}
-
-/* Détails de l'article */
-.item-details {
   display: flex;
-  flex-direction: column; /* Afficher les détails de l'article en colonne */
 }
 
-/* Titre de l'article */
+.item-image {
+  width: auto; /* Définir la largeur sur "auto" */
+  max-width: 100px; /* Définir la largeur maximale */
+  height: auto;
+  object-fit: cover;
+  margin-right: 20px; /* Ajouter un espacement à droite de l'image */
+  flex-shrink: 0; /* Empêcher la réduction de la taille de l'image */
+}
+
+.item-details {
+  flex-grow: 1;
+}
+
 .item-title {
   font-size: 18px;
-  margin-bottom: 10px; /* Espacement entre le titre et le prix */
+  margin: 0;
 }
 
-/* Prix de l'article */
 .item-price {
   font-size: 14px;
   color: #666;
-  margin-bottom: 10px; /* Espacement entre le prix et la quantité */
 }
 
-/* Quantité de l'article */
 .item-quantity {
   font-size: 14px;
   color: #666;
-}
-
-.input-group {
-  display: block;
-}
-
-.input-group input {
-  width: 80%; /* Occupe toute la largeur disponible */
-  margin-bottom: 15px; /* Marge entre les champs */
 }
