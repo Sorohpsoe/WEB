@@ -33,6 +33,10 @@ function Achat() {
           ))}
         </div>
       </div>
+      
+      <Catalogue />
+      <Banner /> 
+      
     </div>
   );
 }
