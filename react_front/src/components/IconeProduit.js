@@ -19,11 +19,7 @@ export default function IconeProduit (props) {
   const [compteur, setCompteur] = useState(0);
 
   const isMobile = window.innerWidth <= 767; // Vérifie si l'écran est de taille mobile
-
-  const position = {
-    top: Math.floor(index / 4) * (270 + 20) + 200, // 270px est la hauteur d'une icône plus son espacement
-    left: isMobile ? (index % 2) * (220 + 20) + 300 : (index % 4) * (220 + 20) + 300, // 25vw est la largeur d'une icône plus son espacement, 1vw pour l'espacement, 3vw pour le padding
-  };
+  
   
   const isProductVisible = () => {
     if (!search) {
@@ -79,7 +75,7 @@ export default function IconeProduit (props) {
 
   // render
   return(
-    <div className="gray-box" style={{...position, position: 'absolute'}}>
+    <div className="gray-box" >
       <div className="text-on-box">
         <div>{titre}</div>
         <div>{prix}</div>

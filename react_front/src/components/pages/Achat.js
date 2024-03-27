@@ -24,13 +24,15 @@ function Achat() {
     <div>
       <Banner />
       <Catalogue />
-      <div className="icon-container">
-        {prix.map((liste,idx) => (
-            
-            <IconeProduit image={image3} liste={liste} index={index+idx}/>
+      <div className="icon-wrapper">
+        <div className="icon-container">
+          {prix.map((liste, idx) => (
+            <div key={liste.id}>
+              <IconeProduit image={image3} liste={liste} />
+            </div>
           ))}
+        </div>
       </div>
-    
     </div>
   );
 }

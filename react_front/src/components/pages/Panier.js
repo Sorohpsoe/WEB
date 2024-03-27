@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { usePanier } from "../PanierContext";
 import emailjs from 'emailjs-com'; // Importez le module EmailJS
 import "../../styles/Panier.css"; // Import du fichier CSS
 import image from '../../assets/steak.jpg';
+import Banner from '../Banner'
 
 function Panier() {
-  
-  const navigate = useNavigate();
+
   const templateIDClient = "template_3ns12gc"
   const templateIDVendeur = "template_su3blld"
   
@@ -61,8 +60,9 @@ function Panier() {
     
 
   return (
+    <div>
+    <Banner />
     <div className="panier-container">
-      <button className="button-accueil" onClick={() => {navigate("/");}}>Accueil </button>
   
       <h2 className="panier-title">Panier</h2>
 
@@ -82,7 +82,7 @@ function Panier() {
           )
         ))}
       </div>
-
+            
       {/* Zone de texte pour le nom de l'utilisateur */}
       <input
         type="text"
@@ -108,6 +108,7 @@ function Panier() {
       />
       
       <button className="button-valider-panier" onClick={envoyerEmail}>Valider Panier</button>
+    </div>
     </div>
   );
 }
