@@ -1,5 +1,6 @@
 import '../styles/IconeProduit.css';
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function IconeProduit (props) {
   
@@ -7,6 +8,7 @@ export default function IconeProduit (props) {
   const liste = props.liste;
   const prix = liste.prix;
   const id = liste.id;
+  const titre = liste.titre;
   const image=props.image;
   const [compteur, setCompteur] = useState(0);
   const top=200;
@@ -40,14 +42,15 @@ export default function IconeProduit (props) {
     <div className="gray-box" style={style}>
 
       <div className="text-on-box"> {prix}$ </div>
-
+      <Link to={`/detail-produit/${id}`}>
       <img src={image} alt="Steak" className="PhotoViande"/>
-      
+      </Link>
       <div className="compteur"> 
         <button onClick={handleRemove}>-</button>
         {" "}{compteur}{" "} 
         <button onClick={handleAdd}>+</button>
       </div>
+      
       <div className="AddBasket">
         <button onClick={handleBasket}>Ajouter au panier</button>
       </div>
