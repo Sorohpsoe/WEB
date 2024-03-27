@@ -10,6 +10,8 @@
 =======
     "axios": "^1.6.8",
     "cors": "^2.8.5",
+    "emailjs-com": "^3.2.0",
+    "mailjs": "^0.1.18",
     "mongoose": "^8.2.3",
 >>>>>>> d78f059 (Mise à jour des dépendances et modification)
     "react": "^18.2.0",
