@@ -16,6 +16,41 @@ function Panier() {
   const { panierclient }  = usePanier();
   console.log(panierclient);
 
+
+  // Fonction pour gérer le stock
+  const gestion_stock = () => {
+    panierclient.forEach(produit => {
+      console.log("Produit: ", produit);
+      console.log("Quantité: ", produit.quantité);
+      console.log("ID: ", produit.id);
+      fetch(`http://localhost:5038/api/app/Viandes/${produit.id}`)
+        .then(response => response.json())
+        .then(data => {
+          console.log("Data: ", data);
+          console.log("Stock: ", data.quantite);
+          const newStock = data.quantite - produit.quantité;
+          console.log("New stock: ", newStock);
+
+
+
+
+          fetch(`http://localhost:5038/api/app/Viandes/${produit.id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              quantite: newStock,
+            }),
+          })
+            .then(response => response.json())
+            .then(data => {
+              console.log("Data: ", data);
+            });
+        });
+    });
+  }
+
   // Fonction pour envoyer un e-mail
   const envoyerEmail = () => {
     // Remplacez 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID' et 'YOUR_USER_ID' par les valeurs de votre compte EmailJS
@@ -55,7 +90,7 @@ function Panier() {
         ))}
       </div>
       
-      <button className="button-valider-panier" onClick={envoyerEmail}>Valider Panier</button>
+      <button className="button-valider-panier" onClick={()=>gestion_stock()}>Valider Panier</button>
     </div>
   );
 }
