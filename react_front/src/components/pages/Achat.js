@@ -9,6 +9,17 @@ import '../../styles/Achat.css';
 
 function Achat() {
 
+  const API_URL = "http://localhost:5038/";
+
+  const getItems = async () => {
+    fetch(this.API_URL+"api/app/Viandes")
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ items: data });
+      });
+  };
+  const { items } = this.state;
+
   let index = 0
   const navigate = useNavigate();
   
@@ -30,7 +41,7 @@ function Achat() {
       <button onClick={() => {navigate("/");}}>Accueil</button>
       
       <div className="icon-container">
-        {prix.map((liste,idx) => (
+        {items.map((liste,idx) => (
           
           <IconeProduit image={image3} liste={liste} index={index+idx}/>
         ))}
@@ -42,7 +53,7 @@ function Achat() {
     </div>
   );
 }
-}
+
 
 export default Achat;
 
