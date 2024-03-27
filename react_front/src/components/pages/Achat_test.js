@@ -43,7 +43,7 @@ async addClick() {
   });  
 }
 async deleteClick(id) {
-  fetch(this.API_URL + "api/app/DeleteViande?_id="+id, {
+  fetch(this.API_URL + "api/app/DeleteViande?id="+id, {
     method: "DELETE"
   }).then(res => res.json())
   .then((result) => {
@@ -63,8 +63,8 @@ render () {
       <button onClick={() => this.addClick()}>Add viande</button>
       {items.map(item =>
         <p>
-          <b> * {item.description} - {item.prix}€ - {item._id}</b>&nsbp;
-          <button onClick={() => this.deleteClick(item._id)}>Delete viande</button>
+          <b> * {item.description} - {item.prix}€ - {item.id}</b>&nsbp;
+          <button onClick={() => this.deleteClick(item.id)}>Delete viande</button>
         </p> 
       )}
     </div>

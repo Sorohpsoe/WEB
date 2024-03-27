@@ -60,6 +60,8 @@ export default function IconeProduit (props) {
 
   };
 
+  
+
   // render
   return(
     <div className="gray-box" style={{...position, position: 'absolute'}}>
