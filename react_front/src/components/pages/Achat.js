@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Component } from "react";
 import { useNavigate } from "react-router-dom";
 import IconeProduit from '../IconeProduit.js';
@@ -7,18 +7,21 @@ import Banner from '../Banner'
 
 import '../../styles/Achat.css';
 
-function Achat() {
 
+function Achat() {
   const API_URL = "http://localhost:5038/";
 
-  const getItems = async () => {
-    fetch(this.API_URL+"api/app/Viandes")
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch(API_URL + "api/app/Viandes")
       .then(response => response.json())
       .then(data => {
-        this.setState({ items: data });
+        // Process the data here
+        setItems(data);
+        // Handle the error here
       });
-  };
-  const { items } = this.state;
+  }, []);
 
   let index = 0
   const navigate = useNavigate();

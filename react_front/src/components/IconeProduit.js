@@ -68,7 +68,7 @@ export default function IconeProduit (props) {
   // render
   return(
     <div className="gray-box" style={{...position, position: 'absolute'}}>
-      <div className="text-on-box">{prix}€</div>
+      <div className="text-on-box">{nom} - {prix}€</div>
       <img src={image} alt="Steak" className="PhotoViande"/>
       <div className="compteur"> 
         <button onClick={handleRemove}>-</button>
