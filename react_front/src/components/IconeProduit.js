@@ -20,21 +20,6 @@ export default function IconeProduit (props) {
 
   const isMobile = window.innerWidth <= 767; // Vérifie si l'écran est de taille mobile
   
-  
-  const isProductVisible = () => {
-    if (!search) {
-      return true;
-    }
-    const searchTerm = search.toLowerCase();
-    return (
-      liste.name.toLowerCase().includes(searchTerm) ||
-      liste.category.toLowerCase().includes(searchTerm)
-    );  
-  };
-
-  if (!isProductVisible()) {
-    return null; // Ne rien rendre si le produit ne correspond pas à la recherche
-  }
 
   // events
   const handleAdd = () => {

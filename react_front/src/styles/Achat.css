@@ -1,8 +1,8 @@
-/* Achat.css */
-
 .icon-wrapper {
   display: flex;
   justify-content: flex-end;
+  margin-right: 5%;
+  margin-top: 50px; /* Ajouter un espace de 20px entre les icônes et le bord droit de l'écran */
 }
 
 .icon-container {
@@ -11,6 +11,12 @@
   gap: 20px; /* Espacement entre les icônes */
 }
 
-.icon-container > div {
+.icon-item {
   text-align: center; /* Centrer le contenu des div */
+}
+
+@media (max-width: 768px) {
+  .icon-container {
+    grid-template-columns: repeat(2, 1fr); /* Deux éléments par ligne sur les petits écrans */
+  }
 }
