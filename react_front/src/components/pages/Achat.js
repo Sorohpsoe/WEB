@@ -61,6 +61,7 @@ function Achat() {
       </div>
       
       <Catalogue />
+      <Catalogue />
       <Banner /> 
       
     </div>

@@ -31,6 +31,7 @@ function App(){
             <Route path="/achat" element={<Achat />} />
             <Route path="/panier" element={<Panier />} />
           </Routes>
+          
         </div>
       </SearchProvider>
       </PanierProvider>
