@@ -2,7 +2,7 @@ import React from "react";
 import IconeProduit from '../IconeProduit.js';
 import { image1, image2, image3 } from '../Images.js'; 
 import Banner from '../Banner'
-import Catalogue from '../Catalogue.js'
+import Catalogue  from '../Catalogue.js';
 
 import '../../styles/Achat.css';
 
@@ -43,6 +43,7 @@ function Achat() {
         </div>
       </div>
       
+      <Catalogue />
       <Catalogue />
       <Banner /> 
       
