@@ -1,18 +1,11 @@
 /* Achat.css */
 
-.icon-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  padding : 10 px
-}
-
+/* Style de base pour le conteneur des icônes */
 .icon-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px; /* Espacement entre les icônes */
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centre les icônes horizontalement */
+
 }
 
-.icon-container > div {
-  text-align: center; /* Centrer le contenu des div */
-}
+

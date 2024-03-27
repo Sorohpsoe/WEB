@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import IconeProduit from '../IconeProduit.js';
 import { image1, image2, image3 } from '../Images.js'; 
 import Banner from '../Banner'
@@ -7,8 +8,10 @@ import Catalogue  from '../Catalogue.js';
 import '../../styles/Achat.css';
 
 function Achat() {
-  
+
   let index = 0
+  const navigate = useNavigate();
+  
   
   const prix = [
     { category: "Plancha",price:"3€",stocked:true, name:"Entrecôte", id: 0},
@@ -31,16 +34,18 @@ function Achat() {
 
   return (
     <div>
-      <Banner />
-      <Catalogue />
-      <div className="icon-wrapper">
-        <div className="icon-container">
-          {prix.map((liste, idx) => (
-            <div key={liste.id}>
-              <IconeProduit image={image3} liste={liste} />
-            </div>
-          ))}
-        </div>
+
+      <button 
+        onClick={() => {navigate("/panier");}} >Panier
+      </button>
+
+      <button onClick={() => {navigate("/");}}>Accueil</button>
+      
+      <div className="icon-container">
+        {prix.map((liste,idx) => (
+          
+          <IconeProduit image={image3} liste={liste} index={index+idx}/>
+        ))}
       </div>
       
       <Catalogue />
