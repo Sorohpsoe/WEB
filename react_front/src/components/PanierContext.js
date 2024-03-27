@@ -14,6 +14,7 @@ export function PanierProvider({ children }) {
     { id: 3, titre: "Produit D", quantité: 0, prix : 40 },
     { id: 4, titre: "Produit E", quantité: 0, prix : 50 },
   ]);
+ 
 
   const modifierPanier = (nouveauPanier) => {
     setPanierclient(nouveauPanier);

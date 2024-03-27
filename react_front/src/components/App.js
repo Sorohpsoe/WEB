@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { PanierProvider } from "./PanierContext";
+import {SearchProvider} from "./SearchContext";
 import Home from "./pages/Home.js";
 import Achat from "./pages/Achat.js";
 import Panier from "./pages/Panier.js";
 import ProductView from "./ProductView";
-
 import Catalogue from './Catalogue.js'
 
 // Afficher l'image importée
@@ -23,19 +23,20 @@ function App(){
     <div>
       
       <Router>
-        <PanierProvider>
-        
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/detail-produit/:id" element={<ProductView />} />
-          <Route path="/achat" element={<Achat />} />
-          <Route path="/panier" element={<Panier />} />
-          
-        </Routes>
-
-        </PanierProvider>
-      </Router>
-      <Catalogue />
+      <PanierProvider>
+      <SearchProvider>
+        <div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/detail-produit/:id" element={<ProductView />} />
+            <Route path="/achat" element={<Achat />} />
+            <Route path="/panier" element={<Panier />} />
+          </Routes>
+          <Catalogue />
+        </div>
+      </SearchProvider>
+      </PanierProvider>
+    </Router>
     </div>
   )
 }

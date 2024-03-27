@@ -1,0 +1,55 @@
+/* Catalogue.css */
+
+.catalogue-container {
+    width: 250px; /* Taille ajustable selon vos préférences */
+    position: fixed;
+    left: 20px; /* Ajustez selon l'espacement souhaité depuis le bord gauche */
+    top: 200px; /* Ajustez selon l'espacement souhaité depuis le haut */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Assurez-vous que le z-index soit supérieur à celui des autres éléments pour être au premier plan */
+  }
+  
+  .mb-3 input[type="text"] {
+    width: calc(100% - 15px); /* Largeur ajustable selon vos préférences */
+  }
+
+  
+  
+  label {
+    display: block; /* Assurez-vous que les étiquettes s'affichent verticalement */
+    font-weight: bold;
+    margin-bottom: 5px; /* Espacement entre les étiquettes */
+  }
+  
+  select, input[type="text"] {
+    width: 100%; /* Remplissez toute la largeur du conteneur */
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .table {
+    width: 100%; /* Ajustez la largeur du tableau */
+    border-collapse: collapse;
+    margin-top: 10px; /* Espacement entre le formulaire de recherche et le tableau */
+  }
+  
+  .table th,
+  .table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  

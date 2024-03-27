@@ -1,8 +1,11 @@
+import '../styles/Catalogue.css';
 import {Input} from "./Catalogue/forms/Input.js"
 import {Checkbox} from "./Catalogue/forms/Checkbox.js"
 import {ProductCategoryRow} from "./Catalogue/products/ProductCategoryRow.js"
 import {ProductRow} from "./Catalogue/products/ProductRow.js"
 import React, { useState } from 'react';
+import { useSearch } from './SearchContext';
+
 
 
 const PRODUCTS = [
@@ -18,7 +21,7 @@ const PRODUCTS = [
 function Catalogue() {
   
   const [showStockedOnly, setShowStockedOnly] = useState(false)
-  const [search,setSearch] = useState('')
+  const { search, setSearch } = useSearch();
 
 
   const visibleProducts = PRODUCTS.filter(product => {
@@ -32,7 +35,7 @@ function Catalogue() {
       return true
   })
 
-  return <div className ="container my-3">
+  return <div className ="catalogue-container my-3">
     <SearchBar 
     search={search}
     onSearchChange={setSearch}

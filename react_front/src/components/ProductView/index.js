@@ -4,6 +4,7 @@ import steak from '../../assets/steak.jpg'
 import { useParams } from 'react-router-dom';
 
 
+
 const products = [
   { category: "Plancha",price:"3€",stocked:true, name:"Entrecôte", id: 0,description: 'Description du produit 1'},
   { category: "Plancha",price:"5€",stocked:true, name:"Steak" ,id:1,description: 'Description du produit 2'},
@@ -33,7 +34,6 @@ function ProductView() {
           <h2>{product.name}</h2>
           <p>{product.description}</p>
           <p className="price">Prix: ${product.price}</p>
-          <a href="#" className="button">Acheter maintenant</a>
         </div>
         <footer className="footer">
           <p>© 2024 Votre entreprise. Tous droits réservés.</p>
