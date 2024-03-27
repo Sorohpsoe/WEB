@@ -28,6 +28,7 @@ function ProductView() {
     return <div>Produit non trouvé</div>;
   } else {
     return (
+      <div>
       <div className="product_container">
         <div className="product">
           <img src={steak} alt="La mère à tanguy" />
@@ -35,8 +36,9 @@ function ProductView() {
           <p>{product.description}</p>
           <p className="price">Prix: {product.price}</p>
         </div>
+        </div>
         <footer className="footer">
-          <p>© 2024 Votre entreprise. Tous droits réservés.</p>
+          <p>© 2024 La ferme de Recornet. Tous droits réservés.</p>
         </footer>
       </div>
     );

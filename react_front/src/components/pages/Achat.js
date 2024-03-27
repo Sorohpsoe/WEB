@@ -17,6 +17,15 @@ function Achat() {
     { category: "Barbecue",price:"999€",stocked:true, name:"Groin mdrrrrrrrrrrrrrrrrrrr",id:3 },
     { category: "Vache",price:"69€",stocked:false, name:"La mère à tanguy",id:4 },
     { category: "Plancha",price:"10€",stocked:true, name:"sirène",id:5},
+    { category: "Plancha",price:"10€",stocked:true, name:"sirène",id:5},
+    { category: "Plancha",price:"10€",stocked:true, name:"sirène",id:5},
+    { category: "Plancha",price:"10€",stocked:true, name:"sirène",id:5},
+    { category: "Plancha",price:"10€",stocked:true, name:"sirène",id:5},
+    { category: "Plancha",price:"10€",stocked:true, name:"sirène",id:5},
+    { category: "Plancha",price:"10€",stocked:true, name:"sirène",id:5},
+    { category: "Plancha",price:"10€",stocked:true, name:"sirène",id:5},
+    
+    
   
   ]
 
