@@ -6,15 +6,9 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-<<<<<<< HEAD
-    "emailjs-com": "^3.2.0",
-=======
     "axios": "^1.6.8",
     "cors": "^2.8.5",
-    "mongoose": "^8.2.3",
->>>>>>> d78f059 (Mise à jour des dépendances et modification)
-    "axios": "^1.6.8",
-    "cors": "^2.8.5",
+    "mailjs": "^0.1.18",
     "mongoose": "^8.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
