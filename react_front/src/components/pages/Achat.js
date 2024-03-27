@@ -2,11 +2,13 @@ import React from "react";
 import IconeProduit from '../IconeProduit.js';
 import { image1, image2, image3 } from '../Images.js'; 
 import Banner from '../Banner'
+import Catalogue from '../Catalogue.js'
 
 import '../../styles/Achat.css';
 
 function Achat() {
   
+  let index = 0
   
   const prix = [
     { category: "Plancha",price:"3€",stocked:true, name:"Entrecôte", id: 0},
@@ -21,6 +23,7 @@ function Achat() {
   return (
     <div>
       <Banner />
+      <Catalogue />
       <div className="icon-container">
         {prix.map((liste,idx) => (
             

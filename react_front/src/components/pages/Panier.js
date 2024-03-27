@@ -1,9 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { usePanier } from "../PanierContext";
 import emailjs from 'emailjs-com'; // Importez le module EmailJS
 import "../../styles/Panier.css"; // Import du fichier CSS
 import image from '../../assets/steak.jpg';
+import Banner from '../Banner'
 
 
 function Panier() {
