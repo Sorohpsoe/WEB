@@ -15,7 +15,6 @@ const PRODUCTS = [
   { category: "Barbecue",price:"999€",stocked:true, name:"Groin mdrrrrrrrrrrrrrrrrrrr" },
   { category: "Vache",price:"69€",stocked:false, name:"La mère à tanguy" },
   { category: "Plancha",price:"10€",stocked:true, name:"sirène" },
-
 ]
 
 function Catalogue() {
