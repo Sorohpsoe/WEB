@@ -5,6 +5,7 @@ export default function IconeProduit (props) {
   
   // state
   const liste = props.liste;
+  const nom= liste.nom;
   const prix = liste.prix;
   const id = liste.id;
   const image=props.image;
@@ -35,11 +36,13 @@ export default function IconeProduit (props) {
 
   };
 
+  
+
   // render
   return(
     <div className="gray-box" style={style}>
 
-      <div className="text-on-box"> {prix}$ </div>
+      <div className="text-on-box"> {nom} - {prix}$ </div>
 
       <img src={image} alt="Steak" className="PhotoViande"/>
       
