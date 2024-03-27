@@ -1,16 +1,20 @@
 import '../styles/IconeProduit.css';
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { usePanier } from "./PanierContext";
+import { useSearch } from './SearchContext';
 
 export default function IconeProduit (props) {
 
-  
+  const { search } = useSearch();
   const { panierclient, modifierPanier } = usePanier();
   const { liste, image, index } = props;
   
   // state
-  const prix = liste.prix;
+  const prix = liste.price;
 
+  const titre = liste.name;
+  const id = liste.id;
   
   const [compteur, setCompteur] = useState(0);
 
@@ -21,7 +25,20 @@ export default function IconeProduit (props) {
     left: isMobile ? (index % 2) * (220 + 20) + 300 : (index % 4) * (220 + 20) + 300, // 25vw est la largeur d'une icône plus son espacement, 1vw pour l'espacement, 3vw pour le padding
   };
   
+  const isProductVisible = () => {
+    if (!search) {
+      return true;
+    }
+    const searchTerm = search.toLowerCase();
+    return (
+      liste.name.toLowerCase().includes(searchTerm) ||
+      liste.category.toLowerCase().includes(searchTerm)
+    );  
+  };
 
+  if (!isProductVisible()) {
+    return null; // Ne rien rendre si le produit ne correspond pas à la recherche
+  }
 
   // events
   const handleAdd = () => {
@@ -63,13 +80,19 @@ export default function IconeProduit (props) {
   // render
   return(
     <div className="gray-box" style={{...position, position: 'absolute'}}>
-      <div className="text-on-box">{prix}€</div>
+      <div className="text-on-box">
+        <div>{titre}</div>
+        <div>{prix}</div>
+    </div>
+      <Link to={`/detail-produit/${id}`}>
       <img src={image} alt="Steak" className="PhotoViande"/>
+      </Link>
       <div className="compteur"> 
         <button onClick={handleRemove}>-</button>
         {" "}{compteur}{" "} 
         <button onClick={handleAdd}>+</button>
       </div>
+      
       <div className="AddBasket">
         <button onClick={handleBasket}>Ajouter au panier</button>
       </div>
