@@ -15,6 +15,8 @@ var database;
 
 
 
+
+
 app.listen(5038, () =>{
     Mongoclient.connect(CONNECTION_STRING,(error, client) => {
         database = client.db(DATABASE_NAME);
@@ -74,15 +76,13 @@ app.delete("/api/app/DeleteViandes", (request, response) => {
 
 
 
-app.put('/api/app/addViandes', (request, response) => {
+app.put('/api/app/Viandes', (request, response) => {
   const produitId = request.query.id;
   const newStock = request.body.quantite;
-  const int_stock = parseInt(newStock);
-  const int_id = parseInt(produitId);
 
   database.collection('items').updateOne(
-    { id: int_id },
-    { $set: { quantite: int_stock } },
+    { id: produitId },
+    { $set: { quantite: newStock } },
     (error, result) => {
       if (error) {
         console.error('Erreur:', error);
@@ -92,59 +92,4 @@ app.put('/api/app/addViandes', (request, response) => {
       }
     }
   );
-});
-
-app.put('/api/app/addViandes/:id', (request, response) => {
-  const produitId = request.params.id;
-  const produit = request.body;
-  const int_id = parseInt(produitId);
-  console.log("produit", produit);
-
-  database.collection('items').updateOne(
-    { id: int_id },
-    { $set: produit },
-    (error, result) => {
-      if (error) {
-        console.error('Erreur:', error);
-        response.status(500).json({ error: 'Une erreur est survenue lors de la mise à jour du produit.' });
-      } else if (result.matchedCount === 0) {
-        response.status(404).json({ message: 'Produit non trouvé.' });
-      } else {
-        response.json({ message: 'Produit mis à jour avec succès.' });
-      }
-    }
-  );
-});
-
-
-app.delete('/api/app/deleteViandes/:id', (request, response) => {
-  const produitId = request.params.id;
-  const int_id = parseInt(produitId);
-  console.log(" ID a supprimer: ", int_id);
-
-  database.collection('items').deleteOne(
-    { id: int_id },
-    (error, result) => {
-      if (error) {
-        console.error('Erreur:', error);
-        response.status(500).json({ error: 'Une erreur est survenue lors de la suppression du produit.' });
-      } else {
-        response.json({ message: 'Produit supprimé avec succès.' });
-      }
-    }
-  );
-});
-
-
-app.post('/api/app/AddViandes/:id', (request, response) => {
-  const produit = request.body;
-
-  database.collection('items').insertOne(produit, (error, result) => {
-    if (error) {
-      console.error('Erreur:', error);
-      response.status(500).json({ error: 'Une erreur est survenue lors de la création du produit.' });
-    } else {
-      response.json({ message: 'Produit créé avec succès.', id: result.insertedId });
-    }
-  });
 });
