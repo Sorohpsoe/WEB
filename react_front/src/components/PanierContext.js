@@ -6,6 +6,7 @@ export function usePanier() {
   return useContext(PanierContext);
 }
 
+
 export function PanierProvider({ children }) {
   const [panierclient, setPanierclient] = useState([
     { id: 0, titre: "Produit A", quantité: 0, prix :10 },
@@ -20,6 +21,7 @@ export function PanierProvider({ children }) {
     setPanierclient(nouveauPanier);
   };
 
+  
   return (
     <PanierContext.Provider value={{ panierclient, modifierPanier }}>
       {children}
