@@ -3,14 +3,12 @@
 .icon-wrapper {
   display: flex;
   justify-content: flex-end;
-  padding : 10 px
 }
 
 .icon-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px; /* Espacement entre les icônes */
-  
 }
 
 .icon-container > div {
