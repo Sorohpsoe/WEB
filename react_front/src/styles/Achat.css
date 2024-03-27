@@ -1,0 +1,11 @@
+/* Achat.css */
+
+/* Style de base pour le conteneur des icônes */
+.icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centre les icônes horizontalement */
+
+}
+
+
