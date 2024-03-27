@@ -8,6 +8,17 @@ import { useSearch } from '../SearchContext';
 import '../../styles/Achat.css';
 
 function Achat() {
+
+  const API_URL = "http://localhost:5038/";
+
+  const getItems = async () => {
+    fetch(this.API_URL+"api/app/Viandes")
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ items: data });
+      });
+  };
+  const { items } = this.state;
   
   let index = 0
   const { search } = useSearch();
