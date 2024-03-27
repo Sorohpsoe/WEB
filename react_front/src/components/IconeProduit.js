@@ -12,7 +12,7 @@ export default function IconeProduit (props) {
   const image=props.image;
   const [compteur, setCompteur] = useState(0);
   const top=200;
-  const left=id*300+200;
+  const left=id*300+400;
 
   const style={ 
     position: 'absolute',

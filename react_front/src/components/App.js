@@ -5,6 +5,7 @@ import Achat from "./pages/Achat.js";
 import Panier from "./pages/Panier.js";
 import ProductView from "./ProductView";
 
+import Catalogue from './Catalogue.js'
 
 // Afficher l'image importée
 function App(){
@@ -29,6 +30,7 @@ function App(){
 
       
       
+      <Catalogue />
     </div>
   )
 }
