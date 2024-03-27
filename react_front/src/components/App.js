@@ -32,7 +32,7 @@ function App(){
             <Route path="/achat" element={<Achat />} />
             <Route path="/panier" element={<Panier />} />
           </Routes>
-          <Catalogue />
+          
         </div>
       </SearchProvider>
       </PanierProvider>

@@ -33,7 +33,7 @@ function ProductView() {
           <img src={steak} alt="La mère à tanguy" />
           <h2>{product.name}</h2>
           <p>{product.description}</p>
-          <p className="price">Prix: ${product.price}</p>
+          <p className="price">Prix: {product.price}</p>
         </div>
         <footer className="footer">
           <p>© 2024 Votre entreprise. Tous droits réservés.</p>

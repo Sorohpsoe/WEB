@@ -57,7 +57,7 @@ function SearchBar({showStockedOnly, onStockedOnlyChange, search, onSearchChange
           id="stocked" 
           checked={showStockedOnly} 
           onChange={onStockedOnlyChange} 
-          label="N'AFFICHER QUE LES PRODUITS EN STOCK"/>
+          label="N'afficher que les produits en stock"/>
       </div>
       <div className="mb-3">
         <label htmlFor="category">Catégorie :</label>

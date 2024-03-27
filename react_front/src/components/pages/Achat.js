@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import IconeProduit from '../IconeProduit.js';
 import { image1, image2, image3 } from '../Images.js'; 
 import Banner from '../Banner'
+import Catalogue  from '../Catalogue.js';
 
 import '../../styles/Achat.css';
 
@@ -38,7 +39,7 @@ function Achat() {
         ))}
       </div>
       
-      
+      <Catalogue />
       <Banner /> 
       
     </div>

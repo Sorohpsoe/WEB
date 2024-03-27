@@ -15,6 +15,7 @@
   
   .mb-3 input[type="text"] {
     width: calc(100% - 15px); /* Largeur ajustable selon vos préférences */
+    margin-bottom:10px;
   }
 
   
@@ -22,7 +23,14 @@
   label {
     display: block; /* Assurez-vous que les étiquettes s'affichent verticalement */
     font-weight: bold;
-    margin-bottom: 5px; /* Espacement entre les étiquettes */
+    margin-bottom: 10px; /* Espacement entre les étiquettes */
+    margin-top: 10px;
+  }
+  
+  .label-checkbox {
+    display:inline;
+    font-weight:100;
+    
   }
   
   select, input[type="text"] {
@@ -52,4 +60,3 @@
   .table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
   }
-  

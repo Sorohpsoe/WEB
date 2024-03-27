@@ -51,7 +51,7 @@ export default function IconeProduit (props) {
     }
   };
 
-  const handleBasket = () => {
+    const handleBasket = () => {
     // Recherchez si le produit existe déjà dans le panier
     const produitExistantIndex = panierclient.findIndex(
       (produit) => produit.id === liste.id
@@ -76,6 +76,7 @@ export default function IconeProduit (props) {
     setCompteur(0);
 
   };
+
 
   // render
   return(
