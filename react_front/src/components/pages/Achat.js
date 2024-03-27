@@ -28,7 +28,7 @@ function Achat() {
 
       <button onClick={() => {navigate("/");}}>Accueil</button>
       
-      <div className="icon-container">
+      <div className="page-container">
         {prix.map((liste,idx) => (
           
           <IconeProduit image={image3} liste={liste} index={index+idx}/>
