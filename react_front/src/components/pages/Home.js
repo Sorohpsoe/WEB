@@ -1,10 +1,20 @@
 import React from "react";
-import Banner from "../Banner";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+
+  const navigate = useNavigate();
+
   return (
     <div>
-      <Banner />
+      <button 
+        onClick={() => {navigate("/achat");}} >Achat
+      </button>
+
+      <button 
+        onClick={() => {navigate("/panier");}} >Panier
+      </button>
+      
     </div>
   );
 }

@@ -61,7 +61,7 @@ export default function IconeProduit (props) {
 
   // render
   return(
-    <div className="gray-box" >
+    <div className="gray-box" style={{...position, position: 'absolute'}}>
       <div className="text-on-box">
         <div>{titre}</div>
         <div>{prix}</div>

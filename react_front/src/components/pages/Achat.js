@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import IconeProduit from '../IconeProduit.js';
 import { image1, image2, image3 } from '../Images.js'; 
 import Banner from '../Banner'
@@ -8,7 +9,7 @@ import { useSearch } from '../SearchContext';
 import '../../styles/Achat.css';
 
 function Achat() {
-  
+
   let index = 0
   const { search } = useSearch();
 
