@@ -36,6 +36,7 @@ function ProductView() {
           <p>{product.description}</p>
           <p className="price">Prix: {product.price}</p>
         </div>
+        </div>
         <footer className="footer">
           <p>© 2024 La ferme de Recornet. Tous droits réservés.</p>
         </footer>
