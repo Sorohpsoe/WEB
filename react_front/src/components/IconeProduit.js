@@ -12,7 +12,7 @@ export default function IconeProduit (props) {
   
   // state
   const nom= liste.nom;
-  const prix = liste.prix;
+  const prix = liste.price;
 
   const titre = liste.name;
   const id = liste.id;
