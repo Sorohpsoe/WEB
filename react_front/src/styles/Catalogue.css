@@ -1,7 +1,7 @@
 /* Catalogue.css */
 
 .catalogue-container {
-  width: 250px; /* Taille ajustable selon vos préférences */
+  width: 300px; /* Taille ajustable selon vos préférences */
   position: fixed;
   left: 20px; /* Ajustez selon l'espacement souhaité depuis le bord gauche */
   top: 200px; /* Ajustez selon l'espacement souhaité depuis le haut */
