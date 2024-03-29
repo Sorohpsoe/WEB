@@ -11,6 +11,7 @@ export default function IconeProduit (props) {
   const { liste, image, index } = props;
   
   // state
+  const nom= liste.nom;
   const prix = liste.price;
 
   const titre = liste.name;
@@ -57,6 +58,8 @@ export default function IconeProduit (props) {
     setCompteur(0);
 
   };
+
+  
 
   // render
   return(

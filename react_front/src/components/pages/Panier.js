@@ -14,7 +14,7 @@ function Panier() {
   const userID = "WhJD9B8oAATOEHYRG"
 
   const { panierclient }  = usePanier();
-  
+  console.log("Panier: ", panierclient);
   const panierString = panierclient
     .filter((produit) => produit.quantité > 0)
     .map((produit) => (
@@ -27,6 +27,53 @@ function Panier() {
   const [nomUtilisateur, setNomUtilisateur] = useState("");
   const [emailUtilisateur, setEmailUtilisateur] = useState("");
   const [adresseUtilisateur, setAdresseUtilisateur] = useState("");
+
+
+  // Fonction pour gérer le stock
+  const gestion_stock = () => {
+    panierclient.forEach(produit => {
+      console.log("Produit: ", produit);
+      console.log("Quantité: ", produit.quantité);
+      console.log("ID: ", produit.id);
+      fetch(`http://localhost:5038/api/app/Viandes/${produit.id}`)
+        .then(response => response.json())
+        .then(data => {
+          console.log("Data: ", data);
+          console.log("Stock: ", data.quantite);
+
+          const newStock = data.quantite - produit.quantité;
+          console.log("New stock: ", newStock);
+          
+        
+
+          if(produit){
+          fetch(`http://localhost:5038/api/app/Viandes/${produit.id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+             
+              quantite: newStock,
+
+              
+            }),
+          })
+            .then(response => response.json())
+            .then(data => {
+              console.log("Data: ", data);
+            })
+            .catch(error => console.error('Erreur:', error));
+          }
+          else{
+            console.log("Produit non trouvé.");
+          }
+          });
+    });
+  }
+
+
+
 
   // Fonction pour envoyer un e-mail
   const envoyerEmail = () => {
@@ -61,45 +108,44 @@ function Panier() {
 
   return (
     <div>
-    <Banner />
-    <div className="panier-container">
-  
-      <h2 className="panier-title">Panier</h2>
+      <Banner />
+      <div className="panier-container">
 
-      
-      
-      <div className="panier-items">
-        {panierclient.map((produit) => (
-          produit.quantité > 0 && (
-            <div key={produit.id} className="panier-item">
-              <img src={image} alt="Steak" className="item-image"/>
-              <div className="item-details">
-                <h3 className="item-title">{produit.titre}   </h3>
-                <h4 className="item-price">Prix indicatif : {produit.prix*produit.quantité}€</h4>
-                <h5 className="item-quantity">Quantité : {produit.quantité}</h5>
+        <h2 className="panier-title">Panier</h2>
+
+
+
+        <div className="panier-items">
+          {panierclient.map((produit) => (
+            produit.quantité > 0 && (
+              <div key={produit.id} className="panier-item">
+                <img src={image} alt="Steak" className="item-image" />
+                <div className="item-details">
+                  <h3 className="item-title">{produit.titre}   </h3>
+                  <h4 className="item-price">Prix indicatif : {produit.poids_indicatif !== 0 ? produit.prix * produit.quantité * produit.poids_indicatif : produit.prix * produit.quantité}€</h4>
+                  <h5 className="item-quantity">Quantité : {produit.quantité}</h5>
+                </div>
               </div>
-            </div>
-          )
-        ))}
-      </div>
-            
-      {/* Zone de texte pour le nom de l'utilisateur */}
-      <input
-        type="text"
-        placeholder="Nom"
-        value={nomUtilisateur}
-        onChange={(input) => setNomUtilisateur(input.target.value)}
-      />
+            )
+          ))}
+        </div>
 
-      {/* Zone de texte pour l'adresse e-mail de l'utilisateur */}
-      <input
-        type="email"
-        placeholder="Adresse e-mail"
-        value={emailUtilisateur}
-        onChange={(input) => setEmailUtilisateur(input.target.value)}
-      />
+        {/* Zone de texte pour le nom de l'utilisateur */}
+        <input
+          type="text"
+          placeholder="Nom"
+          value={nomUtilisateur}
+          onChange={(input) => setNomUtilisateur(input.target.value)}
+        />
 
-      {/* Zone de texte pour l'adresse postale de l'utilisateur */}
+        {/* Zone de texte pour l'adresse e-mail de l'utilisateur */}
+        <input
+          type="email"
+          placeholder="Adresse e-mail"
+          value={emailUtilisateur}
+          onChange={(input) => setEmailUtilisateur(input.target.value)}
+        />
+
       <input
         type="text"
         placeholder="Adresse postale"
@@ -107,10 +153,10 @@ function Panier() {
         onChange={(input) => setAdresseUtilisateur(input.target.value)}
       />
       
-      <button className="button-valider-panier" onClick={envoyerEmail}>Valider Panier</button>
-    </div>
-    </div>
-  );
+      <button className="button-valider-panier" onClick={() => { gestion_stock(); envoyerEmail(); }}>Valider Panier</button>
+        </div>
+        </div>
+      );
 }
 
 export default Panier;

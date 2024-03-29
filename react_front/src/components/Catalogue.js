@@ -3,22 +3,35 @@ import {Input} from "./Catalogue/forms/Input.js"
 import {Checkbox} from "./Catalogue/forms/Checkbox.js"
 import {ProductCategoryRow} from "./Catalogue/products/ProductCategoryRow.js"
 import {ProductRow} from "./Catalogue/products/ProductRow.js"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSearch } from './SearchContext';
 
-
-
-const PRODUCTS = [
-  { category: "Plancha",price:"3€",stocked:true, name:"Entrecôte" },
-  { category: "Plancha",price:"5€",stocked:true, name:"Steak" },
-  { category: "Barbecue",price:"1€",stocked:false, name:"Côte" },
-  { category: "Barbecue",price:"999€",stocked:true, name:"Groin mdrrrrrrrrrrrrrrrrrrr" },
-  { category: "Vache",price:"69€",stocked:false, name:"La mère à tanguy" },
-  { category: "Plancha",price:"10€",stocked:true, name:"sirène" },
-]
-
 function Catalogue() {
-  
+
+    
+
+
+const [data, setData] = useState([]);
+const API_URL = "http://localhost:5038/";
+
+useEffect(() => {
+  // Fetch data from API and update the state
+  fetch(API_URL + "api/app/Viandes")
+    .then(response => response.json())
+    .then(data => setData(data))
+    .catch(error => console.error(error));
+}, []);
+
+
+
+
+const PRODUCTS = data.map(item => ({
+  category: item.cat2,
+  price: `${item.prix_kilo}€`,
+  stocked: item.poids > 0,
+  name: item.nom
+}));
+
   const [showStockedOnly, setShowStockedOnly] = useState(false)
   const { search, setSearch } = useSearch();
 
@@ -69,9 +82,12 @@ function SearchBar({showStockedOnly, onStockedOnlyChange, search, onSearchChange
           }}
         >
           <option value="">Toutes les catégories</option>
-          <option value="Plancha">Plancha</option>
-          <option value="Barbecue">Barbecue</option>
-          <option value="Vache">Vache</option>
+          <option value="Abats">Abats</option>
+          <option value="Pièce à griller">Pièce à griller</option>
+          <option value="Pièce à braiser">Pièce à braiser</option>
+          <option value="Préparations">Préparations</option>
+          <option value="Huiles">Huiles</option>
+          <option value="Farines">Farines</option>
         </select>
       </div>
     </div>

@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Component } from "react";
+import { useNavigate } from "react-router-dom";
 import IconeProduit from '../IconeProduit.js';
 import { image1, image2, image3 } from '../Images.js'; 
 import Banner from '../Banner'
@@ -7,7 +9,21 @@ import { useSearch } from '../SearchContext';
 
 import '../../styles/Achat.css';
 
+
 function Achat() {
+  const API_URL = "http://localhost:5038/";
+
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch(API_URL + "api/app/Viandes")
+      .then(response => response.json())
+      .then(data => {
+        // Process the data here
+        setItems(data);
+        // Handle the error here
+      });
+  }, []);
   
   let index = 0
   const { search } = useSearch();
@@ -25,7 +41,15 @@ function Achat() {
     }
      
   }
-  
+    const prix1 = items.map(item => ({
+      category: item.cat1,
+      price: item.prix_kilo + "€",
+      stocked: item.poids > 0,
+      name: item.nom,
+      id: item.id
+    }));
+  console.log(prix1)
+
   const prix = [
     { category: "Plancha",price:"3€",stocked:true, name:"Entrecôte", id: 0},
     { category: "Plancha",price:"5€",stocked:true, name:"Steak" ,id:1},
@@ -42,14 +66,14 @@ function Achat() {
     
   
   ]
-
+console.log(prix)
   return (
     <div>
       <Banner />
       <Catalogue />
       <div className="icon-wrapper">
         <div className="icon-container">
-          {prix.map((liste, idx) => (
+          {prix1.map((liste, idx) => (
             (isProductVisible(liste)) && (
             <div key={liste.id} className="icon-item">
               <IconeProduit image={image3} liste={liste} />
@@ -61,4 +85,6 @@ function Achat() {
   );
 }
 
+
 export default Achat;
+
