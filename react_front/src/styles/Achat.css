@@ -1,15 +1,20 @@
 .icon-wrapper {
   display: flex;
   justify-content: flex-end;
-  margin-right: 2%;
-  margin-left: 60%;
+  margin-right: 50px;
+  margin-left: 400px;
   margin-top: 50px; /* Ajouter un espace de 20px entre les icônes et le bord droit de l'écran */
 }
 
 .icon-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px; /* Espacement entre les icônes */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  /* Espacement horizontal entre les icônes */
+  grid-column-gap: 120px;
+  /* Espacement vertical entre les icônes */
+  grid-row-gap: 20px;
+  width: 100%;
+  margin-right: 50px;
 }
 
 .icon-item {
