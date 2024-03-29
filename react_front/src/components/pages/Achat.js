@@ -85,4 +85,6 @@ console.log(prix)
   );
 }
 
+
 export default Achat;
+

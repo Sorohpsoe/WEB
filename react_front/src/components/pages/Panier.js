@@ -29,17 +29,20 @@ function Panier() {
   const [adresseUtilisateur, setAdresseUtilisateur] = useState("");
 
 
-
   // Fonction pour gérer le stock
   const gestion_stock = () => {
     panierclient.forEach(produit => {
+      console.log("Produit: ", produit);
+      console.log("Quantité: ", produit.quantité);
+      console.log("ID: ", produit.id);
       fetch(`http://localhost:5038/api/app/Viandes/${produit.id}`)
         .then(response => response.json())
         .then(data => {
-          const newStock = data.poids - produit.quantité;
-          if (newStock !== produit.quantité) {
-            console.log("New stock: ", newStock);
-          }
+          console.log("Data: ", data);
+          console.log("Stock: ", data.quantite);
+
+          const newStock = data.quantite - produit.quantité;
+          console.log("New stock: ", newStock);
           
         
 
@@ -51,13 +54,14 @@ function Panier() {
             },
             body: JSON.stringify({
              
-              poids: newStock,
+              quantite: newStock,
 
               
             }),
           })
             .then(response => response.json())
             .then(data => {
+              console.log("Data: ", data);
             })
             .catch(error => console.error('Erreur:', error));
           }
@@ -67,6 +71,10 @@ function Panier() {
           });
     });
   }
+
+
+
+
   // Fonction pour envoyer un e-mail
   const envoyerEmail = () => {
 
