@@ -11,7 +11,8 @@ export default function IconeProduit (props) {
   const { liste, image, index } = props;
   
   // state
-  const prix = liste.price;
+  const nom= liste.nom;
+  const prix = liste.prix;
 
   const titre = liste.name;
   const id = liste.id;
