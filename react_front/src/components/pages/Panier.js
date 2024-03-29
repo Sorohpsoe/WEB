@@ -14,7 +14,7 @@ function Panier() {
   const userID = "WhJD9B8oAATOEHYRG"
 
   const { panierclient }  = usePanier();
-  
+  console.log("Panier: ", panierclient);
   const panierString = panierclient
     .filter((produit) => produit.quantité > 0)
     .map((produit) => (
@@ -107,56 +107,56 @@ function Panier() {
 
   return (
     <div>
-    <Banner />
-    <div className="panier-container">
-  
-      <h2 className="panier-title">Panier</h2>
+      <Banner />
+      <div className="panier-container">
 
-      
-      
-      <div className="panier-items">
-        {panierclient.map((produit) => (
-          produit.quantité > 0 && (
-            <div key={produit.id} className="panier-item">
-              <img src={image} alt="Steak" className="item-image"/>
-              <div className="item-details">
-                <h3 className="item-title">{produit.titre}   </h3>
-                <h4 className="item-price">Prix indicatif : {produit.prix*produit.quantité}€</h4>
-                <h5 className="item-quantity">Quantité : {produit.quantité}</h5>
+        <h2 className="panier-title">Panier</h2>
+
+
+
+        <div className="panier-items">
+          {panierclient.map((produit) => (
+            produit.quantité > 0 && (
+              <div key={produit.id} className="panier-item">
+                <img src={image} alt="Steak" className="item-image" />
+                <div className="item-details">
+                  <h3 className="item-title">{produit.titre}   </h3>
+                  <h4 className="item-price">Prix indicatif : {produit.poids_indicatif !== 0 ? produit.prix * produit.quantité * produit.poids_indicatif : produit.prix * produit.quantité}€</h4>
+                  <h5 className="item-quantity">Quantité : {produit.quantité}</h5>
+                </div>
               </div>
-            </div>
-          )
-        ))}
+            )
+          ))}
+        </div>
+
+        {/* Zone de texte pour le nom de l'utilisateur */}
+        <input
+          type="text"
+          placeholder="Nom"
+          value={nomUtilisateur}
+          onChange={(input) => setNomUtilisateur(input.target.value)}
+        />
+
+        {/* Zone de texte pour l'adresse e-mail de l'utilisateur */}
+        <input
+          type="email"
+          placeholder="Adresse e-mail"
+          value={emailUtilisateur}
+          onChange={(input) => setEmailUtilisateur(input.target.value)}
+        />
+
+        {/* Zone de texte pour l'adresse postale de l'utilisateur */}
+        <input
+          type="text"
+          placeholder="Adresse postale"
+          value={adresseUtilisateur}
+          onChange={(input) => setAdresseUtilisateur(input.target.value)}
+        />
+
+        <button className="button-valider-panier" onClick={() => gestion_stock()}>Valider Panier</button>
       </div>
-            
-      {/* Zone de texte pour le nom de l'utilisateur */}
-      <input
-        type="text"
-        placeholder="Nom"
-        value={nomUtilisateur}
-        onChange={(input) => setNomUtilisateur(input.target.value)}
-      />
 
-      {/* Zone de texte pour l'adresse e-mail de l'utilisateur */}
-      <input
-        type="email"
-        placeholder="Adresse e-mail"
-        value={emailUtilisateur}
-        onChange={(input) => setEmailUtilisateur(input.target.value)}
-      />
-
-      {/* Zone de texte pour l'adresse postale de l'utilisateur */}
-      <input
-        type="text"
-        placeholder="Adresse postale"
-        value={adresseUtilisateur}
-        onChange={(input) => setAdresseUtilisateur(input.target.value)}
-      />
-      
-      <button className="button-valider-panier" onClick={()=>gestion_stock()}>Valider Panier</button>
-    </div>
-      
-      <button className="button-valider-panier" onClick={()=>gestion_stock()}>Valider Panier</button>
+      <button className="button-valider-panier" onClick={() => gestion_stock()}>Valider Panier</button>
     </div>
   );
 }
