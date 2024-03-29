@@ -12,17 +12,19 @@ mongoose.connect(CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology:
   .then(() => console.log("Connected to the database!"))
   .catch(error => console.error("Could not connect to the database:", error));
 
-const productSchema = new mongoose.Schema({
-  // Define your schema here
-    id: Number,
+  const productSchema = new mongoose.Schema({
+    id: String,
     nom: String,
-    description : String,
+    cat1: String,
+    cat2: String,
     poids: Number,
-    quantite: Number,
-    prix: Number,
-});
-
-const Product = mongoose.model('Product', productSchema,'items');
+    prix_kilo: Number,
+    description: String,
+    id_image: String,
+    poids_indicatif: Number,
+  });
+  
+  const Product = mongoose.model('Product', productSchema, 'viande');
 
 app.listen(5038, () => {
   console.log("Server is listening on port 5038");
@@ -56,7 +58,7 @@ app.get('/api/app/Viandes/:id', (request, response) => {
         response.status(500).json({ error: 'Une erreur est survenue lors de la récupération du produit.' });
       });
   });
-  
+
   app.put('/api/app/Viandes/:id', (request, response) => {
     const productId = request.params.id;
     const productData = request.body;

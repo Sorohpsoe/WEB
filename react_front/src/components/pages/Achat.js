@@ -41,7 +41,14 @@ function Achat() {
     }
      
   }
-  
+    const prix1 = items.map(item => ({
+      category: item.cat1,
+      price: item.prix_kilo + "€",
+      stocked: item.poids > 0,
+      name: item.nom
+    }));
+  console.log(prix1)
+
   const prix = [
     { category: "Plancha",price:"3€",stocked:true, name:"Entrecôte", id: 0},
     { category: "Plancha",price:"5€",stocked:true, name:"Steak" ,id:1},
@@ -58,14 +65,14 @@ function Achat() {
     
   
   ]
-
+console.log(prix)
   return (
     <div>
       <Banner />
       <Catalogue />
       <div className="icon-wrapper">
         <div className="icon-container">
-          {prix.map((liste, idx) => (
+          {prix1.map((liste, idx) => (
             (isProductVisible(liste)) && (
             <div key={liste.id} className="icon-item">
               <IconeProduit image={image3} liste={liste} />
