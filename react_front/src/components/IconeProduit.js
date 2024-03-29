@@ -33,6 +33,7 @@ export default function IconeProduit (props) {
   };
 
     const handleBasket = () => {
+    const handleBasket = () => {
     // Recherchez si le produit existe déjà dans le panier
     const produitExistantIndex = panierclient.findIndex(
       (produit) => produit.id === liste.id
@@ -59,8 +60,10 @@ export default function IconeProduit (props) {
   };
 
 
+
   // render
   return(
+    <div className="gray-box" style={{...position, position: 'absolute'}}>
     <div className="gray-box" style={{...position, position: 'absolute'}}>
       <div className="text-on-box">
         <div>{titre}</div>
