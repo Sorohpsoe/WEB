@@ -1,13 +1,13 @@
 .icon-wrapper {
   display: flex;
   justify-content: flex-end;
-  margin-right: 5%;
+  margin-right: 15%;
   margin-top: 50px; /* Ajouter un espace de 20px entre les icônes et le bord droit de l'écran */
 }
 
 .icon-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px; /* Espacement entre les icônes */
 }
 
