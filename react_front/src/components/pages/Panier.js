@@ -73,48 +73,6 @@ function Panier() {
   }
 
 
-  // Fonction pour gérer le stock
-  const gestion_stock = () => {
-    panierclient.forEach(produit => {
-      console.log("Produit: ", produit);
-      console.log("Quantité: ", produit.quantité);
-      console.log("ID: ", produit.id);
-      fetch(`http://localhost:5038/api/app/Viandes/${produit.id}`)
-        .then(response => response.json())
-        .then(data => {
-          console.log("Data: ", data);
-          console.log("Stock: ", data.quantite);
-
-          const newStock = data.quantite - produit.quantité;
-          console.log("New stock: ", newStock);
-          
-        
-
-          if(produit){
-          fetch(`http://localhost:5038/api/app/Viandes/${produit.id}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-             
-              quantite: newStock,
-
-              
-            }),
-          })
-            .then(response => response.json())
-            .then(data => {
-              console.log("Data: ", data);
-            })
-            .catch(error => console.error('Erreur:', error));
-          }
-          else{
-            console.log("Produit non trouvé.");
-          }
-          });
-    });
-  }
 
   // Fonction pour envoyer un e-mail
   const envoyerEmail = () => {
