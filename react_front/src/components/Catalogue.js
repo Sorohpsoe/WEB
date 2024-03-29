@@ -15,7 +15,6 @@ const PRODUCTS = [
   { category: "Barbecue",price:"999€",stocked:true, name:"Groin mdrrrrrrrrrrrrrrrrrrr" },
   { category: "Vache",price:"69€",stocked:false, name:"La mère à tanguy" },
   { category: "Plancha",price:"10€",stocked:true, name:"sirène" },
-
 ]
 
 function Catalogue() {
@@ -57,7 +56,7 @@ function SearchBar({showStockedOnly, onStockedOnlyChange, search, onSearchChange
           id="stocked" 
           checked={showStockedOnly} 
           onChange={onStockedOnlyChange} 
-          label="N'AFFICHER QUE LES PRODUITS EN STOCK"/>
+          label="N'afficher que les produits en stock" />
       </div>
       <div className="mb-3">
         <label htmlFor="category">Catégorie :</label>

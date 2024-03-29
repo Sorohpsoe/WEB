@@ -7,6 +7,6 @@ export function Checkbox ({checked,onChange,label,id}){
                 checked={checked}
             onChange={(e)=> onChange(e.target.checked)}
             />  
-            <label htmlFor={id} className="form-check-label">{label}</label>  
+            <label htmlFor={id} className="label-checkbox">{label}</label>  
     </div>
 }

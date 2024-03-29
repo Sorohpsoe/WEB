@@ -6,6 +6,7 @@ import logo from '../assets/logo.png';
 function Banner() {
     const navigate = useNavigate();
     return (
+        <div>
         <div className='banner'>
             <img src={logo} alt="logo de la ferme de Recornet" className='banner-logo' />
             <div className='banner-content'>
@@ -17,6 +18,10 @@ function Banner() {
                 </div>
             </div>
         </div>
+        <footer className="footer">
+        <p>© 2024 Votre entreprise. Tous droits réservés.</p>
+      </footer>
+      </div>
     )
 }
 export default Banner;
