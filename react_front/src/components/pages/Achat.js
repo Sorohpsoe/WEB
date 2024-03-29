@@ -46,7 +46,8 @@ function Achat() {
       category: item.cat1,
       price: item.prix_kilo + "€",
       stocked: item.poids > 0,
-      name: item.nom
+      name: item.nom,
+      id: item.id
     }));
   console.log(prix1)
 
