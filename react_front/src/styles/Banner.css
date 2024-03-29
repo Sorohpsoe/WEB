@@ -2,7 +2,7 @@
     color: black;
     background-color: rgb(140, 206, 39);
     text-align: left;
-    padding: 16px; /* Réduire l'espacement pour une meilleure adaptation mobile */
+    padding: 15px; /* Réduire l'espacement pour une meilleure adaptation mobile */
     border-bottom: solid 3px black;
     display: flex;
     justify-content: left;
