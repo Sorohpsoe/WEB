@@ -1,7 +1,8 @@
 .icon-wrapper {
   display: flex;
   justify-content: flex-end;
-  margin-right: 15%;
+  margin-right: 2%;
+  margin-left: 60%;
   margin-top: 50px; /* Ajouter un espace de 20px entre les icônes et le bord droit de l'écran */
 }
 
