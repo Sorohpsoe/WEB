@@ -60,3 +60,23 @@ select, input[type="text"] {
 .table tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
+
+@media (max-width: 768px) {
+  label,
+  select,
+  .table {
+    display: none;
+  }
+
+  .mb-3 input[type="text"] {
+    width: calc(100% - 25px); /* Largeur ajustable selon vos préférences */
+    margin-bottom:10px;
+  }
+
+  .catalogue-container {
+    width: calc(100% - 60px); /* Utilisez toute la largeur de l'écran moins une marge */
+    left: 20px; /* Ajustez selon l'espacement souhaité depuis le bord gauche */
+    top: 260px; /* Ajustez selon l'espacement souhaité depuis le haut */
+    margin-bottom: 20px; /* Espacement par rapport aux autres éléments */
+  }
+}

@@ -1,9 +1,9 @@
 .icon-wrapper {
   display: flex;
-  justify-content: flex-end;
-  margin-right: 50px;
-  margin-left: 400px;
+  margin-right: 60px;
+  margin-left: 360px;
   margin-top: 50px; /* Ajouter un espace de 20px entre les icônes et le bord droit de l'écran */
+  padding-bottom: 100px
 }
 
 .icon-container {
@@ -13,8 +13,7 @@
   grid-column-gap: 120px;
   /* Espacement vertical entre les icônes */
   grid-row-gap: 20px;
-  width: 100%;
-  margin-right: 50px;
+  width: calc(100% - 60px);
 }
 
 .icon-item {
@@ -22,7 +21,21 @@
 }
 
 @media (max-width: 768px) {
+  .icon-wrapper {
+    display: flex;
+    margin-right: 60px;
+    margin-left: 60px;
+    margin-top: 140px; /* Ajouter un espace de 20px entre les icônes et le bord droit de l'écran */
+    padding-bottom: 60px
+  }
+
   .icon-container {
-    grid-template-columns: repeat(2, 1fr); /* Deux éléments par ligne sur les petits écrans */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* Espacement horizontal entre les icônes */
+    grid-column-gap: 120px;
+    /* Espacement vertical entre les icônes */
+    grid-row-gap: 20px;
+    width: calc(100% - 60px);
   }
 }

@@ -15,6 +15,12 @@
     flex: 1; /* Prendre autant d'espace que possible */
     padding-left: 16px;
     margin-bottom: 16px; /* Ajouter une marge en bas pour l'espacement */
+    font-family: 'Montserrat', sans-serif;
+    color: #fff; /* Couleur blanche pour le texte */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Ajoute une ombre portée */
+    font-weight: bold; /* Police en gras */
+    font-size: 28px; /* Taille du texte */
+    letter-spacing: 1px;
 }
 
 .banner-logo {
@@ -44,6 +50,21 @@
     background-color: white;
     color: rgb(140, 206, 39);
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(140, 206, 39);
+    padding: 1px 0; /* Ajustez le padding selon vos besoins */
+    color: #fff;
+    text-align: center;
+    font-size: 12px; /* Ajustez la taille de la police selon vos besoins */
+    font-weight: bold; /* Ajustez le poids de la police selon vos besoins */
+    z-index: 1500;
+}
+
 
 /* Media query pour les appareils mobiles avec une largeur maximale de 600px */
 @media (max-width: 600px) {
