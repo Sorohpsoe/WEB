@@ -10,14 +10,6 @@
   overflow: hidden;
 }
 
-@media (max-width: 768px) {
-  .container {
-      width: 90%; /* Largeur de 100% sur les écrans de taille maximale de 768px */
-      height: 90%; /* Hauteur fixe sur les écrans de taille maximale de 768px */
-  }
-}
-
-
 .text-on-box {
   position: absolute;
   top: 160px;

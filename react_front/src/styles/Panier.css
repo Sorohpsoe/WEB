@@ -58,3 +58,58 @@
   width: 80%; /* Occupe toute la largeur disponible */
   margin-bottom: 15px; /* Marge entre les champs */
 }
+
+/* Zones de texte */
+input[type="text"],
+input[type="email"] {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* Bouton de validation */
+.button-valider-panier {
+  background-color: #4CAF50; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  padding: 15px 20px; /* Espacement intérieur */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Animation de transition */
+  margin-bottom: 60px;
+}
+
+.button-valider-panier:hover {
+  background-color: #45a049; /* Changement de couleur au survol */
+}
+
+@media (max-width: 768px) {
+  .panier-container {
+    padding: 10px;
+  }
+  .panier-item {
+    padding: 15px;
+    grid-template-columns: auto 1fr;
+  }
+  .item-image {
+    width: 80px;
+  }
+  .item-title {
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+  .item-price,
+  .item-quantity {
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+  .button-valider-panier {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+}
