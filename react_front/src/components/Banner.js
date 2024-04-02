@@ -18,9 +18,9 @@ function Banner() {
                 </div>
             </div>
         </div>
-        <footer className="footer">
-        <p>© 2024 Votre entreprise. Tous droits réservés.</p>
-      </footer>
+        <footer className='footer'>
+            <p>© 2024 La TEAM. Tous droits réservés.</p>
+        </footer>
       </div>
     )
 }
