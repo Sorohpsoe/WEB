@@ -1,0 +1,89 @@
+.search-bar-container {
+    display: flex; /* Utilisez flexbox pour aligner les éléments horizontalement */
+    align-items: center; /* Alignez les éléments verticalement au centre */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    }
+  
+    .search-input {
+        flex: 1; /* L'input prendra autant d'espace que possible */
+        font-size: 20px;
+        padding: 12px;
+    }
+  
+    .form-check {
+        margin-left: 20px; /* Ajoutez un espacement à gauche entre l'input et la checkbox */
+    }
+  
+    .form-check-label {
+        margin-left: 5px; /* Ajoutez un espacement à gauche entre la checkbox et le label */
+    }
+    /* Ajoutez ces styles pour aligner les boutons et leurs libellés */
+    
+  /* Styles pour le conteneur des boutons d'action */
+  .action-buttons-container {
+    position: absolute;
+    top: 70px; /* Hauteur du bandeau blanc contenant la search bar et la checkbox */
+    left: 10px; /* Distance par rapport au bord gauche de la fenêtre */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligner les éléments à gauche */
+  }
+  
+  /* Styles pour les boutons d'action */
+  .action-button {
+    margin-bottom: 10px; /* Ajoutez un espacement entre les boutons */
+  }
+  
+  .action-button label {
+    margin-top: 5px; /* Ajoutez un espacement entre le bouton et son libellé */
+  }
+  
+  .form-group {
+    margin-bottom: 15px; /* Espacement entre les groupes de formulaire */
+  }
+  .form-group label {
+    display: block; /* Afficher les labels sur une ligne différente */
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%; /* Occupera toute la largeur du formulaire */
+  }
+  /* Styles pour la page d'administration */
+  .admin-container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-container h1 {
+    color: #333;
+  }
+  
+  .admin-container p {
+    color: #666;
+  }
+  
+  .admin-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .admin-container button:hover {
+    background-color: #0056b3;
+  }

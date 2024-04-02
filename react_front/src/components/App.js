@@ -6,6 +6,7 @@ import Home from "./pages/Home.js";
 import Achat from "./pages/Achat.js";
 import Panier from "./pages/Panier.js";
 import ProductView from "./ProductView";
+import AdminPage from './pages/AdminPage.js';
 
 // Afficher l'image importée
 function App(){
@@ -26,6 +27,7 @@ function App(){
       <SearchProvider>
         <div>
           <Routes>
+            <Route path="/admin" element={<AdminPage />} /> {/* Route pour la page d'administration */}
             <Route path="/" element={<Home />} />
             <Route path="/detail-produit/:id" element={<ProductView />} />
             <Route path="/achat" element={<Achat />} />
@@ -34,6 +36,7 @@ function App(){
         </div>
       </SearchProvider>
       </PanierProvider>
+
     </Router>
     </div>
   )
