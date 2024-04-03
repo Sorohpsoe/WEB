@@ -8,9 +8,8 @@ import { useParams } from 'react-router-dom';
 const products = [
   { category: "Plancha",price:"3€",stocked:true, name:"Entrecôte", id: 0,description: 'Description du produit 1'},
   { category: "Plancha",price:"5€",stocked:true, name:"Steak" ,id:1,description: 'Description du produit 2'},
-  { category: "Barbecue",price:"1€",stocked:false, name:"Côte",id:2,description: 'Description du produit 3' },
+  { category: "Barbecue",price:"27.18€",stocked:false, name:"Entrecôtes",id:2,description: 'Description du produit 3' },
   { category: "Barbecue",price:"999€",stocked:true, name:"Groin mdrrrrrrrrrrrrrrrrrrr",id:3,description: 'Description du produit 4' },
-  { category: "Vache",price:"69€",stocked:false, name:"La mère à tanguy",id:4,description: 'Description du produit 5' },
   { category: "Plancha",price:"10€",stocked:true, name:"sirène",id:5,description: 'Description du produit 6'},
 
 ]
@@ -31,10 +30,10 @@ function ProductView() {
       <div>
       <div className="product_container">
         <div className="product">
-          <img src={steak} alt="La mère à tanguy" />
+          <img src={steak} alt="" />
           <h2>{product.name}</h2>
           <p>{product.description}</p>
-          <p className="price">Prix: ${product.price}</p>
+          <p className="price">Prix: {product.price}</p>
         </div>
         
       </div>
